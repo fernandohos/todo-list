@@ -1,0 +1,27 @@
+.header {
+    height: 70px;
+    background-color: #eef;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header p {
+    font-size: 20px;
+    color: #00008a;
+    margin-right: 10px;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;   
+}
+
+.header .add-icon {
+    cursor: pointer;
+    transition: all ease .2s;
+}
+
+.header .add-icon:hover {
+    transform: scale(1.1);
+}
