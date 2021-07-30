@@ -1,0 +1,7 @@
+.todo {
+    flex: 1;
+    background-color: #eef;
+    margin: 30px;
+    padding: 30px;
+    border-radius: 20px;
+}
