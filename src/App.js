@@ -31,6 +31,18 @@ export default function App() {
         setTasks(newTasks);
     }
 
+    function createNewTask(e, newTask) {
+        e.preventDefault();
+
+        if(newTask !== '') {
+            const idNumber = tasks.length;
+            const newTasksArray = [...tasks, {id: idNumber, task:newTask, done: false}];
+            setTasks(newTasksArray);
+        }
+
+        handleModal();
+    }
+
     return (
         <>
             <Header handleModal={handleModal} modalOpened={modalOpened} />
@@ -38,7 +50,7 @@ export default function App() {
                 <Todo handleDoneTask={handleDoneTask} tasks={tasks} />
                 <Done handleDoneTask={handleDoneTask} tasks={tasks} />
             </main>
-            <Modal handleModal={handleModal} modalOpened={modalOpened} />
+            <Modal createNewTask={createNewTask} handleModal={handleModal} modalOpened={modalOpened} />
         </>
     )
 }
