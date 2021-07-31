@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 30px 0;
 }
 
 .todo .task p {
@@ -29,4 +30,12 @@
 .todo .icons {
     display: flex;
     align-items: center;
+}
+
+.todo .task.done {
+    background-color: #f7f7ffaa;
+}
+
+.todo .task.done p {
+    text-decoration: line-through;
 }
