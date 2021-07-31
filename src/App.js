@@ -1,5 +1,8 @@
 import React from 'react';
 import Header from './components/Header';
+import Todo from './components/Todo';
+import Done from './components/Done';
+import Modal from './components/Modal';
 import './App.css';
 
 export default function App() {
@@ -7,8 +10,13 @@ export default function App() {
 
     
     return (
-        <main>
+        <>
             <Header />
-        </main>
+            <main className="container">
+                <Todo />
+                <Done />
+            </main>
+            <Modal />
+        </>
     )
 }
