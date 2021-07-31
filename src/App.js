@@ -7,16 +7,20 @@ import './App.css';
 
 export default function App() {
 
+    const [modalOpened, setModalOpened] = React.useState(false);
 
-    
+    function handleModal() {
+        setModalOpened(!modalOpened)
+    }
+
     return (
         <>
-            <Header />
+            <Header handleModal={handleModal} modalOpened={modalOpened} />
             <main className="container">
                 <Todo />
                 <Done />
             </main>
-            <Modal />
+            <Modal handleModal={handleModal} modalOpened={modalOpened} />
         </>
     )
 }
