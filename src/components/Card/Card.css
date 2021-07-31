@@ -1,4 +1,4 @@
-.todo .task {
+.task {
     background-color: #fff;
     border-radius: 10px;
     padding: 15px;
@@ -8,34 +8,34 @@
     margin: 30px 0;
 }
 
-.todo .task p {
+.task p {
     margin: 0;
     padding: 0;
     font-weight: 500;
 }
 
-.todo .trash-icon, 
-.todo .check-icon {
+.trash-icon, 
+.check-icon {
     margin: 10px;
     cursor: pointer;
     transition: all ease .2s;
 }
 
-.todo .trash-icon:hover,
-.todo .check-icon:hover {
+.trash-icon:hover,
+.check-icon:hover {
     transform: scale(1.1)
 }
 
 
-.todo .icons {
+.icons {
     display: flex;
     align-items: center;
 }
 
-.todo .task.done {
+.task.done {
     background-color: #f7f7ffaa;
 }
 
-.todo .task.done p {
+.task.done p {
     text-decoration: line-through;
 }

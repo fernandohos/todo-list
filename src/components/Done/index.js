@@ -1,11 +1,11 @@
 import React from 'react';
 import Card from '../Card';
-import './Todo.css';
+import './Done.css';
 
-export default function Todo(props) {
-
+export default function Done(props) {
+    
     return (
-        <section className="todo">
+        <section className="done">
             <Card />
         </section>
     )
