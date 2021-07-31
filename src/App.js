@@ -9,16 +9,23 @@ export default function App() {
 
     const [modalOpened, setModalOpened] = React.useState(false);
 
+    const [tasks, setTasks] = React.useState([
+        {id: 0, task: "Fazer Tarefa", done: false},
+        {id: 1, task: "Fazer Outra Tarefa", done: true},
+        {id: 2, task: "Fazer Mais uma Tarefa", done: false},
+        {id: 3, task: "Fazer Mais uma Outra Tarefa", done: true}
+    ]);
+
     function handleModal() {
-        setModalOpened(!modalOpened)
+        setModalOpened(!modalOpened);
     }
 
     return (
         <>
             <Header handleModal={handleModal} modalOpened={modalOpened} />
             <main className="container">
-                <Todo />
-                <Done />
+                <Todo tasks={tasks} />
+                <Done tasks={tasks} />
             </main>
             <Modal handleModal={handleModal} modalOpened={modalOpened} />
         </>

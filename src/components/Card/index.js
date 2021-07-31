@@ -6,21 +6,15 @@ import './Card.css';
 
 export default function Card(props) {
 
-    const [show, setShow] = React.useState(false);
-
-    function handleCheckIcon() {
-        setShow(!show);
-    }
-
     return (
-        <div className="task">
-            <p>Fazer Tarefa</p>
+        <div data-id={props.id} className={props.done? "task done": "task"}>
+            <p>{props.task}</p>
             <div className="icons">
                 <div className="check-icon">
                     {
-                        show ?
-                            <CheckCircle onClick={e => handleCheckIcon()} size={20} color="#00008a" /> :
-                            <Circle onClick={e => handleCheckIcon()} size={20} color="#00008a" />
+                        props.done ?
+                            <CheckCircle size={20} color="#00008a" /> :
+                            <Circle size={20} color="#00008a" />
                     }
                 </div>
                 <div className="trash-icon">
