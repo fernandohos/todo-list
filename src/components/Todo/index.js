@@ -11,7 +11,7 @@ export default function Todo(props) {
                     return !task.done
                 })
                     .map(task => {
-                        return <Card key={task.task} id={task.id} done={task.done} task={task.task} />
+                        return <Card key={task.task} id={task.id} handleDoneTask={props.handleDoneTask} done={task.done} task={task.task} />
                     })
             }
         </section>

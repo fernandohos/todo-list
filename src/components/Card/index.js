@@ -13,8 +13,8 @@ export default function Card(props) {
                 <div className="check-icon">
                     {
                         props.done ?
-                            <CheckCircle size={20} color="#00008a" /> :
-                            <Circle size={20} color="#00008a" />
+                            <CheckCircle onClick={e=>props.handleDoneTask(props.id)} size={20} color="#00008a" /> :
+                            <Circle onClick={e=>props.handleDoneTask(props.id)} size={20} color="#00008a" />
                     }
                 </div>
                 <div className="trash-icon">

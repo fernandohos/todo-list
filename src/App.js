@@ -20,12 +20,23 @@ export default function App() {
         setModalOpened(!modalOpened);
     }
 
+    function handleDoneTask(taskId) {
+        const newTasks = tasks.map(task => {
+            if(task.id === taskId) {
+                task.done = !task.done;
+                console.log(task)
+            }
+            return task;
+        })
+        setTasks(newTasks);
+    }
+
     return (
         <>
             <Header handleModal={handleModal} modalOpened={modalOpened} />
             <main className="container">
-                <Todo tasks={tasks} />
-                <Done tasks={tasks} />
+                <Todo handleDoneTask={handleDoneTask} tasks={tasks} />
+                <Done handleDoneTask={handleDoneTask} tasks={tasks} />
             </main>
             <Modal handleModal={handleModal} modalOpened={modalOpened} />
         </>

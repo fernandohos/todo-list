@@ -18,8 +18,13 @@
 }
 
 .header .add-icon {
-    cursor: pointer;
     transition: all ease .2s;
+}
+
+.header .add-icon button {
+    border: none;
+    background-color: none;
+    cursor: pointer;
 }
 
 .header .add-icon:hover {

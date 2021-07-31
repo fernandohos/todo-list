@@ -13,7 +13,7 @@ export default function Header(props) {
                 <CheckSquare color="#00008a" size={25} />
             </div>
             <div className="add-icon">
-                <PlusCircle onClick={props.handleModal} color="#00008a" size={30} />
+                <button onClick={props.handleModal}><PlusCircle color="#00008a" size={30} /></button>
             </div>
         </header>
     )
