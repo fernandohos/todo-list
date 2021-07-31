@@ -3,7 +3,7 @@ import './Modal.css'
 
 export default function Modal(props) {
     return (
-        <div className="modal-bg">
+        <div className="modal-bg hide">
             <form className="modal">
                 <label for="task">Nova Tarefa</label>
                 <input name="task" id="task" type="text" />
