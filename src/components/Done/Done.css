@@ -4,4 +4,12 @@ section.done {
     padding: 0 30px;
     border-radius: 8px;
     height: min-content;
+    min-height: 70vh;
+}
+
+section.done h2 {
+    margin-top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #bcbcbc;
 }

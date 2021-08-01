@@ -16,16 +16,18 @@ export default function App() {
         // {id: 3, task: "Fazer Mais uma Outra Tarefa", done: true}
 
     React.useEffect(()=> {
-        let storagedTasks = localStorage.getItem("tasks");
+        const storagedTasks = JSON.parse(localStorage.getItem("tasks"));
 
         if(storagedTasks) {
-        setTasks(JSON.parse(storagedTasks));
+            setTasks(storagedTasks);
         }
         
     },[]);
 
     React.useEffect(()=> {
-        localStorage.setItem("tasks", JSON.stringify(tasks));
+        if(tasks) {
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+        }
     },[tasks]);
 
     function handleModal() {
@@ -36,7 +38,6 @@ export default function App() {
         const newTasks = tasks.map(task => {
             if(task.id === taskId) {
                 task.done = !task.done;
-                console.log(task)
             }
             return task;
         })
@@ -82,7 +83,7 @@ export default function App() {
 
     return (
         <>
-            <Header handleModal={handleModal} modalOpened={modalOpened} />
+            <Header isEmpty={tasks.length} handleModal={handleModal} modalOpened={modalOpened} />
             <main className="container">
                 <Todo editTask={editTask} deleteTask={deleteTask} handleDoneTask={handleDoneTask} tasks={tasks} />
                 <Done editTask={editTask} deleteTask={deleteTask} handleDoneTask={handleDoneTask} tasks={tasks} />

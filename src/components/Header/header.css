@@ -19,6 +19,7 @@
 
 .header .add-icon {
     transition: all ease .2s;
+    position: relative;
 }
 
 .header .add-icon button {
@@ -29,4 +30,27 @@
 
 .header .add-icon:hover {
     transform: scale(1.1);
+}
+
+.header .add-icon.empty::after {
+    content: 'Clique aqui adicionar uma tarefa.';
+    background-color: #00008a;
+    position: absolute;
+    width: max-content;
+    bottom: -150%;
+    right: 0;
+    padding: 10px;
+    color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.header .add-icon.empty::before {
+    content: '';
+    position: absolute;
+    border: 10px solid;
+    border-color: transparent transparent #00008a transparent;
+    bottom: -34%;
+    left: 50%;
+    transform: translateX(-50%);
 }

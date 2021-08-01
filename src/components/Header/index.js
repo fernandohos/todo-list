@@ -12,7 +12,7 @@ export default function Header(props) {
                 <p>To-Do List</p>
                 <CheckSquare color="#00008a" size={25} />
             </div>
-            <div className="add-icon">
+            <div className={props.isEmpty ===0? "add-icon empty" : "add-icon"}>
                 <button onClick={props.handleModal}><PlusCircle color="#00008a" size={30} /></button>
             </div>
         </header>
