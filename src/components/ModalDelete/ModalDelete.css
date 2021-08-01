@@ -1,0 +1,58 @@
+.modal-delete--bg {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-delete {
+    background-color: #fff;
+    width: min(400px, 90vw);
+    border-radius: 4px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-delete button.delete-btn {
+    margin-bottom: 2%;
+    width: 100%;
+    height: 30px;
+    border: 2px solid #f00;
+    background-color: rgb(241, 49, 49);
+    color: #fff;
+    cursor: pointer;
+    transition: all ease .2s;
+}
+
+.modal-delete button.cancel-btn {
+    width: 100%;
+    height: 30px;
+    border: 2px solid #a5a5a5;
+    background-color: transparent;
+    color: #a5a5a5;
+    cursor: pointer;
+    transition: all ease 0.2s;
+}
+
+.modal-delete button.cancel-btn:hover,
+.modal-delete button.delete-btn:hover {
+    transform: scale(1.02);
+}
+
+.modal-delete p {
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+}
+
+.modal-delete span {
+    font-weight: 400;
+}

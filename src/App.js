@@ -43,12 +43,25 @@ export default function App() {
         handleModal();
     }
 
+    function deleteTask(e, taskId) {
+        e.preventDefault();
+        const newTasks = tasks.filter((task) => {
+            if(task.id === taskId) {
+                return false
+            }
+            else {
+                return true
+            }
+        })
+        setTasks(newTasks);
+    }
+
     return (
         <>
             <Header handleModal={handleModal} modalOpened={modalOpened} />
             <main className="container">
-                <Todo handleDoneTask={handleDoneTask} tasks={tasks} />
-                <Done handleDoneTask={handleDoneTask} tasks={tasks} />
+                <Todo deleteTask={deleteTask} handleDoneTask={handleDoneTask} tasks={tasks} />
+                <Done deleteTask={deleteTask} handleDoneTask={handleDoneTask} tasks={tasks} />
             </main>
             <Modal createNewTask={createNewTask} handleModal={handleModal} modalOpened={modalOpened} />
         </>

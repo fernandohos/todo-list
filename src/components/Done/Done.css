@@ -3,4 +3,5 @@ section.done {
     background-color: #eef;
     padding: 0 30px;
     border-radius: 8px;
+    height: min-content;
 }
