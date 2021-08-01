@@ -9,12 +9,24 @@ export default function App() {
 
     const [modalOpened, setModalOpened] = React.useState(false);
 
-    const [tasks, setTasks] = React.useState([
-        {id: 0, task: "Fazer Tarefa", done: false},
-        {id: 1, task: "Fazer Outra Tarefa", done: true},
-        {id: 2, task: "Fazer Mais uma Tarefa", done: false},
-        {id: 3, task: "Fazer Mais uma Outra Tarefa", done: true}
-    ]);
+    const [tasks, setTasks] = React.useState([]);
+        // {id: 0, task: "Fazer Tarefa", done: false},
+        // {id: 1, task: "Fazer Outra Tarefa", done: true},
+        // {id: 2, task: "Fazer Mais uma Tarefa", done: false},
+        // {id: 3, task: "Fazer Mais uma Outra Tarefa", done: true}
+
+    React.useEffect(()=> {
+        let storagedTasks = localStorage.getItem("tasks");
+
+        if(storagedTasks) {
+        setTasks(JSON.parse(storagedTasks));
+        }
+        
+    },[]);
+
+    React.useEffect(()=> {
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    },[tasks]);
 
     function handleModal() {
         setModalOpened(!modalOpened);
@@ -58,7 +70,7 @@ export default function App() {
 
     function editTask(e, taskId, newTask) {
         e.preventDefault();
-        
+
         const newTasks = tasks.map((task) => {
             if(task.id === taskId) {
                 task.task = newTask;
