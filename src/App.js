@@ -56,12 +56,24 @@ export default function App() {
         setTasks(newTasks);
     }
 
+    function editTask(e, taskId, newTask) {
+        e.preventDefault();
+        
+        const newTasks = tasks.map((task) => {
+            if(task.id === taskId) {
+                task.task = newTask;
+            }
+            return task;
+        })
+        setTasks(newTasks);
+    }
+
     return (
         <>
             <Header handleModal={handleModal} modalOpened={modalOpened} />
             <main className="container">
-                <Todo deleteTask={deleteTask} handleDoneTask={handleDoneTask} tasks={tasks} />
-                <Done deleteTask={deleteTask} handleDoneTask={handleDoneTask} tasks={tasks} />
+                <Todo editTask={editTask} deleteTask={deleteTask} handleDoneTask={handleDoneTask} tasks={tasks} />
+                <Done editTask={editTask} deleteTask={deleteTask} handleDoneTask={handleDoneTask} tasks={tasks} />
             </main>
             <Modal createNewTask={createNewTask} handleModal={handleModal} modalOpened={modalOpened} />
         </>

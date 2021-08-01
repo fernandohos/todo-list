@@ -16,14 +16,16 @@
 }
 
 .task div.trash-icon, 
-.task div.check-icon {
+.task div.check-icon,
+.task div.edit-icon {
     margin: 10px;
     transition: all ease .2s;
     cursor: pointer;
 }
 
 .trash-icon:hover,
-.check-icon:hover {
+.check-icon:hover,
+.edit-icon:hover {
     transform: scale(1.1);
 }
 
@@ -41,7 +43,8 @@
     text-decoration: line-through;
 }
 
-.trash-icon button {
+.trash-icon button,
+.edit-icon button {
     border: none;
     background-color: transparent;
     cursor: pointer;

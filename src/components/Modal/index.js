@@ -14,12 +14,18 @@ export default function Modal(props) {
 
     return (
         <div id="modal-bg" onClick={closeModal} className={props.modalOpened ? "modal-bg" : "modal-bg hide"}>
+
             <form className="modal">
+
                 <label>Nova Tarefa</label>
+
                 <input name="task" id="task" type="text" value={textInput} onChange={e => setTextInput(e.target.value)} />
+
                 <button onClick={e => { props.createNewTask(e, textInput); setTextInput('') }} className="confirm-btn">Criar </button>
+                
                 <button id="cancel-btn" className="cancel-btn" onClick={closeModal}>Cancelar</button>
             </form>
+
         </div>
     )
 }

@@ -11,7 +11,7 @@ export default function Done(props) {
                     return task.done
                 })
                     .map(task => {
-                        return <Card deleteTask={props.deleteTask} key={task.task} id={task.id} handleDoneTask={props.handleDoneTask} done={task.done} task={task.task} />
+                        return <Card editTask={props.editTask} deleteTask={props.deleteTask} key={task.task} id={task.id} handleDoneTask={props.handleDoneTask} done={task.done} task={task.task} />
                     })
             }
         </section>

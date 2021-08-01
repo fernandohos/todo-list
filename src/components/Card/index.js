@@ -2,37 +2,58 @@ import React from 'react';
 import { Circle } from 'react-feather';
 import { CheckCircle } from 'react-feather';
 import { Trash2 } from 'react-feather';
+import { Edit2 } from 'react-feather';
 import ModalDelete from '../ModalDelete';
+import ModalEdit from '../ModalEdit';
 import './Card.css';
 
 export default function Card(props) {
 
     const [showModalDelete, setShowModalDelete] = React.useState(false);
+    const [showModalEdit, setShowModalEdit] = React.useState(false);
+
 
     function handleModalDelete() {
         setShowModalDelete(!showModalDelete);
     }
+
+    function handleModalEdit() {
+        setShowModalEdit(!showModalEdit);
+    }
+
 
     return (
         <>
             <div data-id={props.id} className={props.done ? "task done" : "task"}>
                 <p>{props.task}</p>
                 <div className="icons">
-                    <div className="check-icon">
+
+                    <div title="editar" className="edit-icon">
+                        <button onClick={e => handleModalEdit()}><Edit2 color="#00008a" size={20} /></button>
+                    </div>
+
+                    <div className="check-icon" title={props.done? "desmarcar como feito" : "marcar como feito"}>
                         {
                             props.done ?
                                 <CheckCircle onClick={e => props.handleDoneTask(props.id)} size={20} color="#00008a" /> :
                                 <Circle onClick={e => props.handleDoneTask(props.id)} size={20} color="#00008a" />
                         }
                     </div>
-                    <div className="trash-icon">
+
+                    <div title="excluir" className="trash-icon">
                         <button onClick={e => handleModalDelete()}><Trash2 color="#00008a" size={20} /></button>
                     </div>
+
                 </div>
             </div>
             {
                 showModalDelete ?
                     <ModalDelete deleteTask={props.deleteTask} handleModalDelete={handleModalDelete} id={props.id} task={props.task} /> :
+                    <></>
+            }
+            {
+                showModalEdit ?
+                    <ModalEdit editTask={props.editTask} handleModalEdit={handleModalEdit} id={props.id} task={props.task} /> :
                     <></>
             }
         </>
