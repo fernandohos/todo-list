@@ -18,17 +18,17 @@
 }
 
 .header .add-icon {
-    transition: all ease .2s;
     position: relative;
 }
 
 .header .add-icon button {
+    transition: all ease .2s;
     border: none;
     background-color: none;
     cursor: pointer;
 }
 
-.header .add-icon:hover {
+.header .add-icon button:hover {
     transform: scale(1.1);
 }
 

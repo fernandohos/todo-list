@@ -24,7 +24,7 @@ export default function Card(props) {
 
     return (
         <>
-            <div data-id={props.id} className={props.done ? "task done" : "task"}>
+            <div data-object={`"id":${props.id},"task":${props.task}, "done":${props.done}`} data-id={props.id} className={props.done ? "task done" : "task"}>
                 <p>{props.task}</p>
                 <div className="icons">
 

@@ -44,11 +44,33 @@ export default function App() {
         setTasks(newTasks);
     }
 
+    function generateId(idLength = 10) {
+        let randomId = '';
+
+        function verifyId(generatedId) {
+            return tasks.some(task => {
+                return task.id === generatedId;
+            })
+        }
+
+        while (randomId.length < idLength) {
+            randomId += Math.random().toString(36).substr(2);
+        }
+        if(randomId.length > idLength) {
+            randomId = randomId.substr(0, idLength);
+        }
+
+        while(verifyId(randomId)) {
+            verifyId(randomId);
+        }
+        return randomId;
+    }
+
     function createNewTask(e, newTask) {
         e.preventDefault();
 
         if(newTask !== '') {
-            const idNumber = tasks.length;
+            const idNumber = generateId(17);
             const newTasksArray = [...tasks, {id: idNumber, task:newTask, done: false}];
             setTasks(newTasksArray);
         }
