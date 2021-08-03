@@ -23,7 +23,7 @@
 
 .modal-delete button.delete-btn {
     margin-bottom: 2%;
-    width: 100%;
+    width: 70%;
     height: 30px;
     border: 2px solid #f00;
     background-color: rgb(241, 49, 49);
@@ -33,7 +33,7 @@
 }
 
 .modal-delete button.cancel-btn {
-    width: 100%;
+    width: 70%;
     height: 30px;
     border: 2px solid #a5a5a5;
     background-color: transparent;
@@ -56,4 +56,14 @@
 
 .modal-delete span {
     font-weight: 400;
+}
+
+@media (max-width: 550px) {
+    .modal-delete label {
+        font-size: 25px;
+    }
+
+    .modal-delete {
+        padding: 30px 0px;
+    }
 }

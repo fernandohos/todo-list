@@ -8,9 +8,21 @@ section.todo {
     overflow-y: scroll;
 }
 
+section.todo .no-task {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 section.todo h2 {
-    margin-top: 50%;
-    transform: translateY(-50%);
     text-align: center;
     color: #bcbcbc;
+}
+
+@media (max-width: 400px) {
+    section.todo {
+        padding: 0 15px;
+    }
 }

@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: space-between;
     margin: 30px 0;
+    cursor: grab;
 }
 
 .task p {
@@ -15,11 +16,11 @@
     word-break: break-all;
 }
 
-.task div.trash-icon, 
+.task div.trash-icon,
 .task div.check-icon,
 .task div.edit-icon {
     margin: 10px;
-    transition: all ease .2s;
+    transition: all ease 0.2s;
     cursor: pointer;
 }
 
@@ -28,7 +29,6 @@
 .edit-icon:hover {
     transform: scale(1.1);
 }
-
 
 .icons {
     display: flex;
@@ -48,4 +48,26 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
+}
+
+@media (max-width: 550px) {
+    .task {
+        padding: 10px;
+        margin: 15px 0;
+    }
+
+    .task div.trash-icon,
+    .task div.check-icon,
+    .task div.edit-icon {
+        margin: 5px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .task div.trash-icon,
+    .task div.check-icon,
+    .task div.edit-icon {
+        margin: 0px;
+    }
 }

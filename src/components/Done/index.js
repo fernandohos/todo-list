@@ -17,7 +17,7 @@ export default function Done(props) {
         });
     
         if(tasksFiltered.length === 0) {
-            return (<h2>Não há tarefas concluídas.</h2>);
+            return (<div className="no-task"><h2>Não há tarefas concluídas.</h2></div>);
         }
         else {
             return tasksCards;

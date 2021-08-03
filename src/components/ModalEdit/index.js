@@ -15,7 +15,7 @@ export default function ModalEdit(props) {
     return (
         <div id="modal-edit--bg" onClick={closeModal} className="modal-edit--bg">
 
-            <form className="modal">
+            <form className="modalEdit">
 
                 <label>Editar a Tarefa: <span>{props.task}</span></label>
 

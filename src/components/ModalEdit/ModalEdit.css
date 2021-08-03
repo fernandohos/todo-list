@@ -1,4 +1,4 @@
-.modal {
+.modalEdit {
     width: min(400px, 90vw);
     background-color: #fff;
     display: flex;
@@ -21,21 +21,21 @@
     z-index: 5;
 }
 
-.modal label {
+.modalEdit label {
     margin-bottom: 10%;
     font-size: 30px;
     font-weight: 600;
 }
 
-.modal label span {
+.modalEdit label span {
     font-weight: 400;
 }
 
-.modal input {
+.modalEdit input {
     margin-bottom: 10%;
 }
 
-.modal .confirm-btn {
+.modalEdit .confirm-btn {
     margin-bottom: 2%;
     width: 70%;
     height: 30px;
@@ -46,11 +46,11 @@
     transition: all ease .2s;
 }
 
-.modal .confirm-btn:hover {
+.modalEdit .confirm-btn:hover {
     transform: scale(1.03);
 }
 
-.modal .cancel-btn {
+.modalEdit .cancel-btn {
     width: 70%;
     height: 30px;
     border: 2px solid #a5a5a5;
@@ -60,18 +60,29 @@
     transition: all ease .2s;
 }
 
-.modal .cancel-btn:hover {
+.modalEdit .cancel-btn:hover {
     transform: scale(1.02);
 }
 
-.modal button {
+.modalEdit button {
     border-radius: 4px;
 }
 
-.modal input {
+.modalEdit input {
     width: 70%;
     height: 30px;
     padding: 0 3px;
     font-size: 19px;
     box-sizing: border-box;
+}
+
+
+@media (max-width: 550px) {
+    .modalEdit label {
+        font-size: 25px;
+    }
+
+    .modalEdit {
+        padding: 30px 0px;
+    }
 }
