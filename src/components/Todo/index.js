@@ -23,9 +23,17 @@ export default function Todo(props) {
             return tasksCards;
         }
     }
+    function allowDrop(e) {
+        e.preventDefault();
+    }
+
+    function dropTodo(e) {
+        const objectId = e.dataTransfer.getData('object-id');
+        props.updateTasksAfterDrop(objectId, "todo");
+    }
 
     return (
-        <section className="todo">
+        <section onDrop={dropTodo} onDragOver={e => allowDrop(e)} className="todo">
             {
                 filteredTasks()
             }

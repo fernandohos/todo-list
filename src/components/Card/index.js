@@ -21,10 +21,14 @@ export default function Card(props) {
         setShowModalEdit(!showModalEdit);
     }
 
+    function dragCard(e) {
+        e.dataTransfer.setData("object-id", e.target.id);
+    }
+
 
     return (
         <>
-            <div data-object={`"id":${props.id},"task":${props.task}, "done":${props.done}`} data-id={props.id} className={props.done ? "task done" : "task"}>
+            <div id={props.id} draggable="true" onDragStart={e=> dragCard(e)} data-object={`"id":${props.id},"task":${props.task}, "done":${props.done}`} data-id={props.id} className={props.done ? "task done" : "task"}>
                 <p>{props.task}</p>
                 <div className="icons">
 

@@ -8,6 +8,8 @@ import './App.css';
 export default function App() {
 
     const [modalOpened, setModalOpened] = React.useState(false);
+    const [todoUpdatedTasks, setTodoUpdatedTasks] = React.useState([]);
+    const [doneUpdatedTasks, setDoneUpdatedTasks] = React.useState([]);
 
     const [tasks, setTasks] = React.useState([]);
         // {id: 0, task: "Fazer Tarefa", done: false},
@@ -30,6 +32,20 @@ export default function App() {
         }
     },[tasks]);
 
+    function updateTasks() {
+        setTasks([...todoUpdatedTasks, ...doneUpdatedTasks]);
+    }
+
+    function updateTodoTasks(tasksArray) {
+        setTodoUpdatedTasks(tasksArray);
+        updateTasks();
+    }
+    
+    function updateDoneTasks(tasksArray) {
+        setDoneUpdatedTasks(tasksArray);
+        updateTasks();
+    }
+
     function handleModal() {
         setModalOpened(!modalOpened);
     }
@@ -42,6 +58,24 @@ export default function App() {
             return task;
         })
         setTasks(newTasks);
+    }
+
+    function updateTasksAfterDrop(taskId, todoDone) {
+        const updatedTasks = tasks.map(task => {
+            if(task.id === taskId) {
+                switch(todoDone) {
+                    case "todo": 
+                        task.done = false;
+                        break;
+                    case "done":
+                        task.done = true;
+                        break;
+                    default: console.log("Error on switch updateTasksAfterDrop");
+                }
+            }
+            return task;
+        });
+        setTasks(updatedTasks);
     }
 
     function generateId(idLength = 10) {
@@ -97,6 +131,7 @@ export default function App() {
         const newTasks = tasks.map((task) => {
             if(task.id === taskId) {
                 task.task = newTask;
+                
             }
             return task;
         })
@@ -107,8 +142,8 @@ export default function App() {
         <>
             <Header isEmpty={tasks.length} handleModal={handleModal} modalOpened={modalOpened} />
             <main className="container">
-                <Todo editTask={editTask} deleteTask={deleteTask} handleDoneTask={handleDoneTask} tasks={tasks} />
-                <Done editTask={editTask} deleteTask={deleteTask} handleDoneTask={handleDoneTask} tasks={tasks} />
+                <Todo updateTasksAfterDrop={updateTasksAfterDrop} updateTodoTasks={updateTodoTasks} editTask={editTask} deleteTask={deleteTask} handleDoneTask={handleDoneTask} tasks={tasks} />
+                <Done updateTasksAfterDrop={updateTasksAfterDrop} updateDoneTasks={updateDoneTasks} editTask={editTask} deleteTask={deleteTask} handleDoneTask={handleDoneTask} tasks={tasks} />
             </main>
             <Modal createNewTask={createNewTask} handleModal={handleModal} modalOpened={modalOpened} />
         </>

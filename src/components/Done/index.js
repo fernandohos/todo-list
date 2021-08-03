@@ -24,8 +24,18 @@ export default function Done(props) {
         }
     }
 
+    function dropTodo(e) {
+        const objectId = e.dataTransfer.getData('object-id');
+        props.updateTasksAfterDrop(objectId, "done");
+    }
+
+    function allowDrop(e) {
+        e.preventDefault();
+    }
+
+
     return (
-        <section className="done">
+        <section onDrop={dropTodo} onDragOver={e => allowDrop(e)} className="done">
             {
                 filteredTasks()
             }

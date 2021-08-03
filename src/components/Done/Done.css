@@ -3,8 +3,9 @@ section.done {
     background-color: #eef;
     padding: 0 30px;
     border-radius: 8px;
-    height: min-content;
-    min-height: 70vh;
+    /* height: min-content; */
+    height: 70vh;
+    overflow-y: scroll;
 }
 
 section.done h2 {
