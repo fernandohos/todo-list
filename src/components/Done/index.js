@@ -5,9 +5,6 @@ import './Done.css';
 export default function Done(props) {
 
     function filteredTasks() {
-        if(props.tasks === []) {
-            return <h1>Não tem task</h1>;
-        }
         const tasksFiltered = props.tasks.filter(task => {
                     return task.done
                 })
@@ -17,7 +14,7 @@ export default function Done(props) {
         });
     
         if(tasksFiltered.length === 0) {
-            return (<div className="no-task"><h2>Não há tarefas concluídas.</h2></div>);
+            return (<div className="no-task"><h2>There are no tasks completed.</h2></div>);
         }
         else {
             return tasksCards;

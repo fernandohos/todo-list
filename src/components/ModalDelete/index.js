@@ -10,10 +10,10 @@ export default function ModalDelete(props) {
     return (
         <div id="modal-delete--bg" onClick={closeModal} className="modal-delete--bg">
             <div className="modal-delete">
-                <p>Tem certeza que deseja excluir a tarefa:<br/><span>{props.task}</span>?</p>
+                <p>Are you sure you want to delete the task: <br/><span>{props.task}</span>?</p>
 
-                <button onClick={e => props.deleteTask(e, props.id)} className="delete-btn">Deletar</button>
-                <button onClick={props.handleModalDelete} className="cancel-btn">Cancelar</button>
+                <button onClick={e => props.deleteTask(e, props.id)} className="delete-btn">Delete Task</button>
+                <button onClick={props.handleModalDelete} className="cancel-btn">Cancel</button>
             </div>
         </div>
     )

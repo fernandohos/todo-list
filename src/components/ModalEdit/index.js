@@ -17,13 +17,13 @@ export default function ModalEdit(props) {
 
             <form className="modalEdit">
 
-                <label>Editar a Tarefa: <span>{props.task}</span></label>
+                <label>Edit the Task: <span>{props.task}</span></label>
 
                 <input name="task" id="task" type="text" value={textInput} onChange={e => setTextInput(e.target.value)} />
 
-                <button onClick={e => {e.preventDefault(); props.editTask(e, props.id, textInput);}} className="confirm-btn">Editar</button>
+                <button onClick={e => {e.preventDefault(); props.editTask(e, props.id, textInput);}} className="confirm-btn">Edit task</button>
                 
-                <button id="cancel-btn" className="cancel-btn" onClick={closeModal}>Cancelar</button>
+                <button id="cancel-btn" className="cancel-btn" onClick={closeModal}>Cancel</button>
             </form>
 
         </div>

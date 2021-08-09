@@ -33,7 +33,7 @@
 }
 
 .header .add-icon.empty::after {
-    content: 'Clique aqui adicionar uma tarefa.';
+    content: 'Click here to add a new task.';
     background-color: #00008a;
     position: absolute;
     width: max-content;

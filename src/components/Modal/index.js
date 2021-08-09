@@ -17,13 +17,13 @@ export default function Modal(props) {
 
             <form className="modal">
 
-                <label>Nova Tarefa</label>
+                <label>New Task</label>
 
                 <input name="task" id="task" type="text" value={textInput} onChange={e => setTextInput(e.target.value)} />
 
-                <button onClick={e => { props.createNewTask(e, textInput); setTextInput('') }} className="confirm-btn">Criar </button>
+                <button onClick={e => { props.createNewTask(e, textInput); setTextInput('') }} className="confirm-btn">Create Task</button>
                 
-                <button id="cancel-btn" className="cancel-btn" onClick={closeModal}>Cancelar</button>
+                <button id="cancel-btn" className="cancel-btn" onClick={closeModal}>Cancel</button>
             </form>
 
         </div>

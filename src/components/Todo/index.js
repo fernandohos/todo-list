@@ -6,7 +6,7 @@ export default function Todo(props) {
 
     function filteredTasks() {
         if(props.tasks === []) {
-            return <h2>Não há tarefas para fazer.</h2>;
+            return <h2>There are no tasks to do.</h2>;
         }
         const tasksFiltered = props.tasks.filter(task => {
                     return !task.done
@@ -17,7 +17,7 @@ export default function Todo(props) {
                     });
     
         if(tasksFiltered.length === 0) {
-            return (<div className="no-task"><h2>Não há tarefas para fazer.</h2></div>);
+            return (<div className="no-task"><h2>There are no tasks to do.</h2></div>);
         }
         else {
             return tasksCards;
