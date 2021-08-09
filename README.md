@@ -25,9 +25,11 @@
 -  ⚙️ JavaScript
 -  ⚛️ React JS
 
+<br>
+<br>
+
 #### Features
-<br>
-<br>
+
 <ul>
   <li>Drag and Drop</li>
   <br>
@@ -46,4 +48,4 @@
 </ul>
 
 
-<p align="center">Made by <a href="https://github.com/fernandohos">Fernando Henrique</a></p>
+<p align="center">Made by <a target="_blank" href="https://github.com/fernandohos">Fernando Henrique</a></p>
