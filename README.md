@@ -28,7 +28,6 @@
 <br>
 <br>
 
-#### Features
 
 <ul>
   <li>Drag and Drop</li>
